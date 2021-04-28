@@ -4,19 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.zateev.spring.mvc_aop_hiber.dao.EmployeeDao;
 import ru.zateev.spring.mvc_aop_hiber.entity.Employee;
+import ru.zateev.spring.mvc_aop_hiber.service.EmployeeService;
 
 import java.util.List;
 
 @Controller
 public class MyController {
     @Autowired
-    private EmployeeDao employeeDao;
+    private EmployeeService employeeService;
 
     @RequestMapping("/")
     public String showAllEmployees(Model model) {
-        List<Employee> allEmployees = employeeDao.getAllEmployees();
+        List<Employee> allEmployees = employeeService.getAllEmployees();
         model.addAttribute("allEmps", allEmployees);
         return "all-employees";
     }
