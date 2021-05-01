@@ -46,10 +46,9 @@
             </td>
             <td>
                 <input type="button" value="Обновить" onclick="window.location.href = '${updateButton}'">
-            </td>
-            <td>
                 <input type="button" value="Удалить" onclick="window.location.href = '${deleteButton}'">
             </td>
+
         </tr>
     </c:forEach>
     </tr>
